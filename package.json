@@ -1,0 +1,36 @@
+{
+  "name": "@giraugh/tools",
+  "private": false,
+  "version": "0.1.1",
+  "type": "module",
+  "description": "Vector utilities",
+  "keywords": [
+    "vector",
+    "utility",
+    "typescript",
+    "maths"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.5",
+    "vitest": "^0.29.8"
+  }
+}
