@@ -15,5 +15,11 @@ export default defineConfig({
       name: '@giraugh/tools',
       fileName: 'main',
     },
+  },
+  define: {
+    'import.meta.vitest': 'undefined',
+  },
+  test: {
+    includeSource: ['lib/**/*.{js,ts}']
   }
 })
