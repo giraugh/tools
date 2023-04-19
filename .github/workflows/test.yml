@@ -6,6 +6,7 @@ on:
       - 'lib/**'
       - 'tsconfig.json'
       - 'vite.config.ts'
+      - '.github/workflows/test.yml'
 
 jobs:
   test:
