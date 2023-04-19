@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  pull_request:
+    paths:
+      - 'lib/**'
+      - 'tsconfig.json'
+      - 'vite.config.ts'
+      - '.github/workflows/test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'yarn'
+    - run: yarn install --immutable
+    - run: yarn test
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'yarn'
+    - run: yarn install --immutable
+    - run: yarn tsc

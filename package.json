@@ -1,13 +1,18 @@
 {
   "name": "@giraugh/tools",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.0",
   "type": "module",
-  "description": "Vector utilities",
+  "license": "MIT",
+  "author": "Ewan Breakey (https://ewanb.me)",
+  "repository": "github:giraugh/tools",
+  "description": "Generic typescript utilities built with simplicity in mind",
   "keywords": [
     "utility",
     "typescript",
-    "arrays"
+    "arrays",
+    "objects",
+    "promises"
   ],
   "files": [
     "dist"
@@ -21,12 +26,12 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "ci:release": "yarn build && yarn changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "typescript": "^4.6.4",
     "vite": "^4.2.1",
     "vite-plugin-dts": "^1.6.5",
