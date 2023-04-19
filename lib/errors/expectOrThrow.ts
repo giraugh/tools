@@ -9,7 +9,7 @@
  * @example expectOrThrow(null) // throws error
  * @example expectOrThrow(null, ':(') // throws error w/ message ':('
  */
-export const expectOrThrow = <T>(t: T | undefined | null, message='Expected argument to be defined') => {
+export const expectOrThrow = <T>(t: T | undefined | null, message='Expected argument to be defined'): T => {
   if (t === undefined || t === null)
     throw new Error(message)
   return t

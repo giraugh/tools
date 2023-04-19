@@ -6,10 +6,10 @@
  * 
  * @example await mapAsync([1, 2, 3], x => Promise.resolve(x + 1)) === [2, 3, 4]
  */
-export const mapAsync = async <A, B>(
-  array: A[],
-  asyncMapFn: (value: A, i: number, arr: A[]) => Promise<B>
-): Promise<B[]> =>
+export const mapAsync = async <TFrom, TTo>(
+  array: TFrom[],
+  asyncMapFn: (value: TFrom, i: number, arr: TFrom[]) => Promise<TTo>
+): Promise<TTo[]> =>
   Promise.all(array.map((v, i, arr) => asyncMapFn(v, i, arr)))
 
 
