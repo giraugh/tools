@@ -28,9 +28,9 @@ npm install @giraugh/tools
 ## Usage
 
 ```ts
-import { pluralize } from '@giraugh/tools'
+import { pluralize } from "@giraugh/tools";
 
-pluralize('cake', 2) === 'cakes'
+pluralize("cake", 2) === "cakes";
 ```
 
 ## Documentation
