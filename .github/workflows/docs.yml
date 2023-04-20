@@ -11,7 +11,7 @@ on:
       - '.github/workflows/docs.yml'
 
 jobs:
-  Deploy-Preview:
+  generate-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
