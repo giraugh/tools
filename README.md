@@ -35,7 +35,7 @@ pluralize('cake', 2) === 'cakes'
 
 ## Documentation
 
-**[📄 Visit documentation](/docs/modules.md)**
+**[📄 Visit documentation](https://giraugh-tools-docs.vercel.app)**
 
 Docs are auto generated based on TSDoc comments. See the full API docs above for a list of tools and constants you can use.
 
