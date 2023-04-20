@@ -9,7 +9,7 @@
  */
 export const mergeObjectValuesBy = <
   TKeys extends PropertyKey,
-  TObj extends Record<TKeys, unknown>
+  TObj extends Record<TKeys, any>
 >(
   objects: TObj[],
   mergeFn: (a: TObj[TKeys], b: TObj[TKeys]) => TObj[TKeys]
