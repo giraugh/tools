@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.0.1
+
+### Patch Changes
+
+- f788708: Fix type of TOBJ in mergeObjectValuesBy being unuseable with interfaces
+
 ## 1.0.0
 
 ### Major Changes
