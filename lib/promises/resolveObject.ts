@@ -1,5 +1,4 @@
-type Resolved<Type> = { [k in keyof Type]: Awaited<Type[k]> }
-type PromiseRecord = Record<string, Promise<unknown>>
+export type Resolved<Type> = { [k in keyof Type]: Awaited<Type[k]> }
 
 /**
  * Resolve all of the fields of an object in parallel
@@ -16,7 +15,7 @@ type PromiseRecord = Record<string, Promise<unknown>>
  *   b: Promise.reject('b'), 
  * }) // throws error
  */
-export const resolveObject = async <T extends PromiseRecord>(object: T): Promise<Resolved<T>> => {
+export const resolveObject = async <T extends Record<string, Promise<any>>>(object: T): Promise<Resolved<T>> => {
   // Create promises for each entry 
   const entryPromises = Object.entries(object)
     .map(([key, promise]) => promise.then(value => [key, value]))
