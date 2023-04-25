@@ -1,5 +1,15 @@
 # @giraugh/tools
 
+## 1.1.0
+
+### Minor Changes
+
+- 4b69d30: Add utils for mapping and filtering objects
+
+### Patch Changes
+
+- ba29680: Export types from resolveObject
+
 ## 1.0.1
 
 ### Patch Changes
