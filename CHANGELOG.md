@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.2.0
+
+### Minor Changes
+
+- 1eebc96: Add logging utils
+
 ## 1.1.0
 
 ### Minor Changes
