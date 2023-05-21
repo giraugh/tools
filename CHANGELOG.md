@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.3.0
+
+### Minor Changes
+
+- 3b4a4d1: Add array rotation method
+
 ## 1.2.0
 
 ### Minor Changes
