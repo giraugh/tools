@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.4.0
+
+### Minor Changes
+
+- ab4992c: Add isKeyOfObject type guard utility
+
 ## 1.3.0
 
 ### Minor Changes
