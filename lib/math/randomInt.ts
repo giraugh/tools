@@ -7,14 +7,13 @@
  * @example
  * ```
  * const value = randomInt(-10, 10)
- * expect(value).toBeGreaterThanOrEqual(-10)
- * expect(value).toBeGreaterThanOrEqual(10)
- * expect(Math.round(value)).toBe(value)
+ * // value >= -10
+ * // value <= 10
+ * // Math.round(value) === value
  * ```
  */
-export const randomInt = (min: number, max: number) => {
-  return Math.round((Math.random() * (max - min))) + min
-}
+export const randomInt = (min: number, max: number) =>
+  Math.round((Math.random() * (max - min))) + min
 
 
 // Tests
