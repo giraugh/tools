@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.5.0
+
+### Minor Changes
+
+- ddc1974: Add randomInt utility
+
 ## 1.4.0
 
 ### Minor Changes
