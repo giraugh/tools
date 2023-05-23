@@ -13,14 +13,14 @@
  * ```
  */
 export const randomInt = (min: number, max: number) => {
-  const range = max - min
-  return Math.round((Math.random() * range)) + min
+  return Math.round((Math.random() * (max - min))) + min
 }
 
 
 // Tests
 if (import.meta.vitest) {
   const { it, expect } = import.meta.vitest
+
   it('is always an integer', () => {
     for (let i = 0; i < 10000; i++) {
       const val = randomInt(-10, 10)
@@ -36,3 +36,4 @@ if (import.meta.vitest) {
     }
   })
 }
+
