@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 1.6.0
+
+### Minor Changes
+
+- ced1559: Add splitArrayBy utility
+
 ## 1.5.0
 
 ### Minor Changes
