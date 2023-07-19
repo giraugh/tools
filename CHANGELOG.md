@@ -1,5 +1,12 @@
 # @giraugh/tools
 
+## 1.7.0
+
+### Minor Changes
+
+- 17a0fa0: Add splitArray util
+- 1a3e407: Add intersperseArray utility
+
 ## 1.6.0
 
 ### Minor Changes
