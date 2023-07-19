@@ -33,4 +33,12 @@ if (import.meta.vitest) {
     const inter = intersperseArray(['alpha', 'beta', 'gamma'], '!')
     expect(inter).toEqual(['alpha', '!', 'beta', '!', 'gamma'])
   })
+  
+  it('does nothing to an empty array', () => {
+    expect(intersperseArray([] as string[], 'hello')).toEqual([])
+  })
+  
+  it('does nothing to an array with one element', () => {
+    expect(intersperseArray(['suave'], '$')).toEqual(['suave'])
+  })
 }
