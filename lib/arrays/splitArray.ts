@@ -37,5 +37,15 @@ if (import.meta.vitest) {
     const runs = splitArray([1, 3, 5, 6, 7, 9, 11], (x) => x % 2 === 0) 
     expect(runs).toEqual([[1, 3, 5], [7, 9, 11]])
   })
+  
+  it('handles an empty array', () => {
+    const runs = splitArray([], (x) => x === 0) 
+    expect(runs).toEqual([])
+  })
+  
+  it('works if predicate is always true', () => {
+    const runs = splitArray(['a', 'b', 'c'], () => true) 
+    expect(runs).toEqual([[], [], [], []])
+  })
 
 }
