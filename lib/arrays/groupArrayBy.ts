@@ -1,10 +1,13 @@
 /**
- * Group an array using a grouping function
+ * Group an array using a grouping function into an object
  * @param array the array to create groups from
  * @param groupFn the keys to group by. Elements which return the same key when passed to this function will be in the same group
- * @returns groups built from the array 
+ * @returns an object containing arrays with an entry for each group
  * 
- * @example groupArrayBy([1, 2, 3, 4], x => x % 2) === [[1, 3], [2, 4]]
+ * @example
+ * const { odd, even } = groupArrayBy([1, 2, 3, 4], x => x % 2 === 0 ? 'even' : 'odd')
+ * // odd === [1, 3]
+ * // even === [2, 4]
 
  * @example
  * const peopleByAge = groupArrayBy([
@@ -12,17 +15,20 @@
  *  { name: 'Claire', age: 20 },
  *  { name: 'Ben', age: 23 }
  * ], person => person.age)
- * peopleByAge === [[
+ * peopleByAge === {
+ *  20: [
  *    { name: 'John', age: 20 },
  *    { name: 'Claire', age: 20 }
- *  ], [
+ *  ],
+ *  23: [
  *    { name: 'Ben', age: 23 }
- * ]]
+ *  ]
+ * }
  */
-export const groupArrayBy = <T>(
+export const groupArrayBy = <T, K extends PropertyKey>(
   array: T[],
-  groupFn: (element: T) => PropertyKey,
-): T[][] => {
+  groupFn: (element: T) => K,
+): Record<K, T[]> => {
   const groups: Record<PropertyKey, T[]> = {}
   for (let element of array) {
     const key = groupFn(element)
@@ -32,7 +38,8 @@ export const groupArrayBy = <T>(
       groups[key].push(element)
     }
   }
-  return Object.values(groups)
+
+  return groups
 }
 
 
@@ -41,10 +48,8 @@ if (import.meta.vitest) {
   const { it, expect } = import.meta.vitest
   
   it('works for example 1', () => {
-    const groups = groupArrayBy([1, 2, 3, 4], x => x % 2)
-    expect(groups).toHaveLength(2)
-    expect(groups).toContainEqual([1, 3])
-    expect(groups).toContainEqual([2, 4])
+    const groups = groupArrayBy([1, 2, 3, 4], x => x % 2 === 0 ? 'even' : 'odd')
+    expect(groups).toEqual({ odd: [1, 3], even: [2, 4] })
   })
 
   it('works for example 2', () => {
@@ -53,13 +58,14 @@ if (import.meta.vitest) {
     { name: 'Claire', age: 20 },
     { name: 'Ben', age: 23 }
     ], person => person.age)
-    expect(peopleByAge).toHaveLength(2)
-    expect(peopleByAge).toContainEqual([
-      { name: 'John', age: 20, },
-      { name: 'Claire', age: 20, },
-    ])
-    expect(peopleByAge).toContainEqual([
-      { name: 'Ben', age: 23, },
-    ])
+    expect(peopleByAge).toEqual({
+      20: [
+        { name: 'John', age: 20 },
+        { name: 'Claire', age: 20 },
+      ],
+      23: [
+        { name: 'Ben', age: 23 },
+      ]
+    })
   })
 }
