@@ -2,7 +2,7 @@
  * Group an array using a grouping function into an object
  * @param array the array to create groups from
  * @param groupFn the keys to group by. Elements which return the same key when passed to this function will be in the same group
- * @returns an object containing ararys with an entry for each group
+ * @returns an object containing arrays with an entry for each group
  * 
  * @example
  * const { odd, even } = groupArrayBy([1, 2, 3, 4], x => x % 2 === 0 ? 'even' : 'odd')
