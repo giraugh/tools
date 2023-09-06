@@ -1,5 +1,21 @@
 # @giraugh/tools
 
+## 2.0.0
+
+### Major Changes
+
+- 9334ab0: Change return of `groupArrayBy` to an object of groups.
+
+  This allows for more flexibility when working with groups. To migrate existing code that uses groupArrayBy, simple wrap the call with `Object.values()`
+
+  ```ts
+  // If you had this before
+  const usersByRole = groupArrayBy(users, (user) => user.role);
+
+  // Change it to this
+  const usersByRole = Object.values(groupArrayBy(users, (user) => user.role));
+  ```
+
 ## 1.7.0
 
 ### Minor Changes
