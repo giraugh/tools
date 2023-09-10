@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 2.1.0
+
+### Minor Changes
+
+- e4aec21: Add clamp utility to math module
+
 ## 2.0.0
 
 ### Major Changes
