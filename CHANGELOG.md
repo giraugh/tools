@@ -1,5 +1,15 @@
 # @giraugh/tools
 
+## 2.2.0
+
+### Minor Changes
+
+- 882ec3c: Add a `settleObject` util that behaves like Promise.allSettled for objects
+
+### Patch Changes
+
+- 882ec3c: Allow `resolveObject` to take a `number` or `symbol` as a key
+
 ## 2.1.0
 
 ### Minor Changes
