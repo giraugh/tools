@@ -2,7 +2,7 @@ export type EditDistanceOptions = {
   weights: {
     insertion?: number,
     deletion?: number,
-    substition?: number,
+    substitution?: number,
   }
 }
 
@@ -31,7 +31,7 @@ export const editDistance = (source: string, target: string, options?: Partial<E
       dynMat[j][i] = Math.min(
         dynMat[j][i - 1] + (options?.weights?.deletion ?? 1), // deletion
         dynMat[j - 1][i] + (options?.weights?.insertion ?? 1), // insertion
-        dynMat[j - 1][i - 1] + (options?.weights?.substition ?? 1) * ind, // substitution
+        dynMat[j - 1][i - 1] + (options?.weights?.substitution ?? 1) * ind, // substitution
       )
     }
   }
@@ -64,6 +64,6 @@ if (import.meta.vitest) {
   it('uses provided operation weights', () => {
     expect(editDistance('', 'abc', { weights: { insertion: 2 } })).toBe(6)
     expect(editDistance('abc', '', { weights: { deletion: 2 } })).toBe(6)
-    expect(editDistance('abc', 'defg', { weights: { substition: 2, insertion: 3 } })).toBe(9)
+    expect(editDistance('abc', 'defg', { weights: { substitution: 2, insertion: 3 } })).toBe(9)
   })
 }
