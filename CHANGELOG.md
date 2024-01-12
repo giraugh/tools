@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 2.3.0
+
+### Minor Changes
+
+- a8db3ee: Add weight options to `editDistance`
+
 ## 2.2.0
 
 ### Minor Changes
