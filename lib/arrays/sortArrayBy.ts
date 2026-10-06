@@ -3,7 +3,7 @@
  * @param array the array to sort
  * @param keyFn the key to sort by. The elements of the array will be sorted using standard `>` and `<` operations on this key.
  * @param order - whether ascending or descending. 'asc' by default.
- * @returns an object containing arrays with an entry for each group
+ * @returns the array sorted using the keyFn.
  * 
  * @example
  * const sorted = sortArrayBy(events, event => event.date.valueOf())
