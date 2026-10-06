@@ -1,5 +1,11 @@
 # @giraugh/tools
 
+## 2.4.0
+
+### Minor Changes
+
+- 5db9bd6: Implement `sortArrayBy`
+
 ## 2.3.1
 
 ### Patch Changes
